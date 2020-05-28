@@ -30,7 +30,14 @@
       body {
         display: flex;
       }
+      #right > div > span{
+        position: absolute;
+        bottom: 50%;
+        /* visibility: hidden;
+        display: none; */
+      }
       #right > div {
+        position: relative;
         box-sizing: border-box;
         width: 100px;
         height: 100px;
@@ -142,7 +149,7 @@
         let selectedColor = e.target.style.backgroundColor;
         let colorItem = document.createElement("div");
         colorItem.style.backgroundColor = selectedColor;
-        colorItem.textContent = selectedColor;
+        colorItem.innerHTML = `<span>${selectedColor}</span>`;
 
         //add to right panel
         document.getElementById("right").appendChild(colorItem);
